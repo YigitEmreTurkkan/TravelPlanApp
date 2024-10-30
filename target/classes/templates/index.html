@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Plan App</title>
+    <style>
+        #map {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+        }
+        .visited {
+            fill: green !important;
+        }
+        .to-visit {
+            fill: orange !important;
+        }
+    </style>
+</head>
+<body>
+<h1>Gezgin Uygulaması - Dünya Haritası</h1>
+<div id="map">
+    <!-- SVG Haritayı Buraya Ekleyin -->
+    <!-- SVG içindeki ülke etiketleri JavaScript tarafından seçilerek etkileşimli hale gelecek -->
+    <!-- Yüklediğiniz dosyayı buraya dahil ediyoruz -->
+    <object id="svgMap" data="/mnt/data/MapChart_Map.svg" type="image/svg+xml" width="100%" height="600px"></object>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const svgObject = document.getElementById("svgMap");
+
+        svgObject.addEventListener("load", function() {
+            const svgDoc = svgObject.contentDocument;
+            const countries = svgDoc.querySelectorAll("path");
+
+            countries.forEach(country => {
+                country.addEventListener("click", function() {
+                    // Zaten gidilen ülke mi?
+                    if (country.classList.contains("visited")) {
+                        country.classList.remove("visited");
+                    }
+                    // Ziyaret edilecek olarak işaretli mi?
+                    else if (country.classList.contains("to-visit")) {
+                        country.classList.remove("to-visit");
+                        country.classList.add("visited");
+                    }
+                    // Henüz işaretlenmemiş ülke
+                    else {
+                        country.classList.add("to-visit");
+                    }
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>
