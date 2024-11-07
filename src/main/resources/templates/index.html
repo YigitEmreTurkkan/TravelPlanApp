@@ -2,24 +2,36 @@
 <html lang="tr">
 <head>
     <link rel="stylesheet" href="styles.css"> <!-- CSS dosyanız -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Plan App</title>
-
 </head>
 <body>
-
-<script src="https://d3js.org/d3.v7.min.js"></script> <!-- D3.js kütüphanesi -->
-<script src="script.js"></script> <!-- JavaScript dosyanız -->
-
 <h1>Gezgin Uygulaması</h1>
 
 <div id="mapContainer">
     <div id="mapBox">
+        <!-- SVG haritayı yerleştirme -->
         <object id="svgMap" data="/static/world.svg" type="image/svg+xml"></object>
     </div>
 </div>
 
+<!-- Ülke adı gösterimi için alt ortadaki div -->
+<div id="countryNameDisplay"></div>
+
+<!-- Sağda bilgi kutusu -->
+<div id="infoBox" class="hidden">
+    <h2 id="countryTitle"></h2>
+    <div id="options">
+        <button class="status-button" data-status="visited">Gittim</button>
+        <button class="status-button" data-status="lived">Yaşadım</button>
+        <button class="status-button" data-status="living">Yaşıyorum</button>
+        <button class="status-button" data-status="wantToVisit">Gitmek İstiyorum</button>
+        <button class="status-button" data-status="notVisited">Gitmedim</button>
+    </div>
+</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script> <!-- D3.js kütüphanesi -->
+<script src="script.js"></script> <!-- JavaScript dosyanız -->
 </body>
 </html>

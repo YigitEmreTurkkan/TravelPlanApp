@@ -44,7 +44,54 @@ h1 {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    border-radius: 0px;
 }
 
+/* Alt Ortada Ülke Adı Gösterimi */
+#countryNameDisplay {
+    position: fixed;
+    bottom: 150px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #01579B;
+    font-weight: bold;
+}
 
+/* Sağdaki Bilgi Kutusu */
+#infoBox {
+    position: fixed;
+    right: 20px;
+    top: 50px;
+    width: 200px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+#options {
+    margin-top: 10px;
+}
+
+.status-button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Renkler */
+.status-button[data-status="visited"] { background-color: #FF6F61; } /* Gittim */
+.status-button[data-status="lived"] { background-color: #42A5F5; } /* Yaşadım */
+.status-button[data-status="living"] { background-color: #66BB6A; } /* Yaşıyorum */
+.status-button[data-status="wantToVisit"] { background-color: #FFA726; } /* Gitmek İstiyorum */
+.status-button[data-status="notVisited"] { background-color: #D3D3D3; } /* Gitmedim */
