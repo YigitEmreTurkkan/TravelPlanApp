@@ -1,0 +1,50 @@
+/* Genel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #E0F7FA; /* Hafif açık mavi arka plan */
+    color: #0D47A1; /* Koyu mavi metin rengi */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Başlık Stili */
+h1 {
+    font-size: 2rem;
+    color: #01579B; /* Başlık için orta mavi ton */
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Harita Konteyneri */
+#mapContainer {
+    position: relative;
+    width: 100vw;
+    max-width: 1010px;
+    height: 70vh;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mapBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0px;
+}
+
+
